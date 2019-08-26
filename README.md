@@ -92,7 +92,61 @@ END
 ```
 
 
+ public int Patient_Id { get; set; }
+        [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "First name cannot be empty")]
+        [RegularExpression("^([a-zA-Z]{2,})$", ErrorMessage = "Name contains only alphabets")]
+        public string Name { get; set; }
 
+        [Required(ErrorMessage = "Please select a gender")]
+        public string Gender { get; set; }
+
+        [Display(Name = "Phone")]
+        [Required(ErrorMessage = "Phone cannot be empty")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?([0-9]{3})?([0-9]{4})$", ErrorMessage = "Phone contains only numbers and 10 digits")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Email cannot be empty")]
+        [RegularExpression(@"^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$", ErrorMessage = "Email address should be in the format abc@abc.com")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password cannot be empty")]
+        [DataType(DataType.Password, ErrorMessage = "Invalid password")]
+        [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,16}$", ErrorMessage = "Password contains one special character, one uppercase, one lowercase, minimum 8 and maximum 16 characters")]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "Address cannot be empty")]
+        public string Address { get; set; }
+
+        public bool UserType { get; set; }
+        public System.DateTime RegistrationDate { get; set; }
+
+
+```sql
+SELECT *
+
+  FROM [PatientManagement].[dbo].[AdviceDetails]
+
+
+   Alter table [dbo].[AdviceDetails]
+  Drop column AdviceId;
+
+  Alter table [dbo].[AdviceDetails]
+  Drop  Constraint PK_AdviceDetails;
+
+  ALTER TABLE [dbo].[AdviceDetails]
+DROP CO; 
+  
+Aletrtable colounm and add autu increment
+    ALTER TABLE  [dbo].[AdviceDetails] Add AdviceId int NOT NULL IDENTITY (1,1) PRIMARY KEY
+
+    
+ [DataType(DataType.Date)]
+        [Display(Name = "Appointment Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public System.DateTime AppointmentDate { get; set; }
+```
+	
 Important links:
 
 https://forums.asp.net/t/2133883.aspx?How+to+send+data+from+_Layout+to+controller+
