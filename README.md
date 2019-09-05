@@ -147,6 +147,18 @@ Aletrtable colounm and add autu increment
         public System.DateTime AppointmentDate { get; set; }
 ```
 	
+Add And Drop column to add primary key with not null
+
+
+```sql
+ALTER TABLE Movies 
+   Add PRIMARY KEY (Id);
+
+
+   ALTER TABLE Movies ALTER COLUMN Id int NOT NULL;
+
+```
+
 Important links:
 
 https://forums.asp.net/t/2133883.aspx?How+to+send+data+from+_Layout+to+controller+
