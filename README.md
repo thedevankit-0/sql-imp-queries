@@ -11,7 +11,21 @@ WillAttend bit
 );
 
 ```
-
+## create table with unique ID 
+```sql
+create table Student (
+ID uniqueidentifier primary key default NEWID()  not null,
+[FirstName] nvarchar(50)  not null,
+ [LastName] nvarchar(50)  not null, 
+ [Address] nvarchar(50)  not null, 
+ [Email] nvarchar(50)  not null, 
+ [Contact] nvarchar(10), 
+ [Gender] char(1)  not null, 
+ [Subject] nvarchar(50)  not null, 
+ [Year] char(4)  not null, 
+ ProfilePhoton varchar(50)
+	)
+```
 ## create procedure
 ```sql
 ALTER PROCEDURE [dbo].[UserDBOperation]
