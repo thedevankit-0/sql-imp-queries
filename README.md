@@ -9,6 +9,29 @@ create table GuestList(
 WillAttend bit
 
 );
+```
+## Foreign key with unique id
+```sql
+create table Student (
+ID uniqueidentifier primary key default NEWID()  not null,
+[FirstName] nvarchar(50)  not null,
+ [LastName] nvarchar(50)  not null, 
+ [Address] nvarchar(50)  not null, 
+ [Email] nvarchar(50)  not null, 
+ [Contact] nvarchar(10) not null, 
+ [Gender] char(1)  not null, 
+ [PhdSubjectId] uniqueidentifier  not null, 
+ [Year] char(4)  not null
+
+ CONSTRAINT FKSUBJECTID FOREIGN KEY (PhdSubjectId)
+REFERENCES PhdSubject (Id)	
+	)
+
+create table PhdSubject (
+ID uniqueidentifier primary key default NEWID()  not null,
+[Name] nvarchar(50)  not null,
+ [Description] nvarchar(150)  not null
+ )
 
 ```
 ## create table with unique ID 
