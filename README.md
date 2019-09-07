@@ -184,15 +184,21 @@ Aletrtable colounm and add autu increment
         public System.DateTime AppointmentDate { get; set; }
 ```
 	
-Add And Drop column to add primary key with not null
-
+## Add And Drop column to add primary key with not null
+## Alter Table 
 
 ```sql
-ALTER TABLE Movies 
-   Add PRIMARY KEY (Id);
+   ALTER TABLE Movies 
+   	Add PRIMARY KEY (Id);
 
 
-   ALTER TABLE Movies ALTER COLUMN Id int NOT NULL;
+   Alter table [dbo].[Student]
+   	Drop column [Year];
+  
+   Alter table [dbo].[Student]
+ 	add [Year] int;
+  
+  ALTER TABLE Movies ALTER COLUMN Id int NOT NULL;
 
 ```
 
