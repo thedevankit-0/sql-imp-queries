@@ -184,6 +184,13 @@ Aletrtable colounm and add autu increment
         public System.DateTime AppointmentDate { get; set; }
 ```
 	
+	
+## Alter/ Delete a column from a table
+```sql
+
+  ALTER TABLE [AressBook].[dbo].[Feedback] DROP COLUMN [UserId];
+```
+
 ## Add And Drop column to add primary key with not null
 ## Alter Table 
 
